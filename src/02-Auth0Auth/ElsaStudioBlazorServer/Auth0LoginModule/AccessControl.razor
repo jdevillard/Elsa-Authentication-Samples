@@ -1,0 +1,21 @@
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@using MudBlazor
+
+
+@inject NavigationManager Navigation
+
+<AuthorizeView>
+    <Authorized>
+        Hello, @context.User.Identity.Name!
+        <MudBlazor.MudIconButton Icon="@Icons.Material.Filled.Logout" Color="Color.Inherit"  Href="/Account/Logout" />
+        @* <a href="/Account/Logout">Log out</a> *@
+    </Authorized>
+    <NotAuthorized>
+        <MudBlazor.MudIconButton Icon="@Icons.Material.Filled.Login" Color="Color.Inherit" Href="/Account/Login" />
+       @*  <a href="/Account/Login">Log in</a> *@
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+   
+}
